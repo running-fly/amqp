@@ -13,7 +13,6 @@ if (empty($queue_name)) {
 }
 //第三个参数：消费者是否唯一
 $channel->queue_declare($queue_name, false, true, false, false);
-
 $binding_keys = array_slice($argv, 2);
 if (empty($binding_keys)) {
     file_put_contents('php://stderr', "Usage: $argv[0] [binding_key]\n");
