@@ -9,7 +9,7 @@ $callback = function ($msg) {
     echo ' [x] Received ', $msg->body, "\n";
     sleep(substr_count($msg->body, '.'));
     echo " [x] Done\n";
-  //
+  //确认消息
     $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
 };
 //公平调度,basic_qos 第二个参数 prefetch_count = 1
